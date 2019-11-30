@@ -1,0 +1,329 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*css reset*/
+
+.bg-primary{
+    background: #fbede4;
+}
+.bg-secondary{
+    background: #fbb0aa;
+}
+.bg-green{
+    background: #366e63;
+}
+body {
+    font-family: Tahoma,Courier;
+    line-height: 1.5;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.wrap {
+    margin: 0 auto;
+}
+.logo {
+    float: left;
+}
+.logo a {
+    background-image: url(https://i.imgur.com/uKRCBcV.png);
+    width: 250px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.menu {
+    float: right;
+}
+.menu li {
+    float: left;
+}
+.menu li a {
+    display: block;
+    color: #f1918a;
+    padding: 1.5em;
+    font-size: 20px;
+}
+.menu li a:hover{
+    color: #838080;
+}
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/*在PC上隱藏漢堡選單*/
+.showmenu {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .menu {
+        /*隱藏選單開始*/
+        max-height: 0px;
+        overflow: hidden;
+        /*隱藏選單結束*/
+        -webkit-transition: max-height 2.3s;
+        transition: max-height 2.3s;
+        margin-top: 1px;
+        /*絕對定位疊在網頁上*/
+        position: absolute;
+        z-index: 100;
+        /*header 80px+1px boder 線條*/
+        top: 81px;
+        left: 0;
+        right: 0;
+        background: #0F222B;
+        opacity: 0.8;
+    }
+    .menu li {
+        float: none;
+        border-bottom: 1px dashed #f1918a;
+    }
+    .menu li a {
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .menu li a:hover {
+        background: #d3d4d3;
+        color: #fff;
+    }
+    .showmenu {
+        display: block;
+        float: right;
+        margin: 1em;
+    }
+    /*jQ點擊後動態在 body 加上 class */
+    .menu-show .menu {
+        max-height: 500px;
+    }
+}
+/*header*/
+.header {
+    padding-bottom: 150px;
+    background-color: #fbede4;
+}
+.banner{
+    background-image: url(https://i.imgur.com/JzDJKJM.png);
+    padding: 25%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+@media(max-width: 569px){
+    .header {
+        padding-bottom: 30px;
+    }
+	.banner{
+        padding: 50%;
+    }
+}
+
+/*hobby*/
+.hobby ul{
+    margin: 0 auto;
+}
+.hobby li{
+    width: 31.3333%;
+    float: left;
+    margin: -10% 1% 2% 1%;
+    text-align: center;
+    -webkit-transition: ease .3s;
+    transition: ease .3s;
+}
+.hobby li:hover{
+    -webkit-transform: rotate(720deg);
+    transform: rotate(720deg);
+}
+@media(max-width: 569px){
+	.hobby li{
+    width: 98%;
+    margin: 5% 0;
+	}
+}
+
+/*about*/
+.self-introduction ul li{
+    width: 48%;
+    float: left;
+}
+.self-img{
+    margin:0 0 10% 0;
+}
+.self-content{
+    margin: 10%;
+}
+@media(max-width: 569px){
+    .self-img{
+        margin:0 3%;
+    }
+	.self-introduction ul li{
+		width: 98%;
+    }
+}
+
+/*skill*/
+.skill{
+    padding: 5% 0;
+}
+.skill ul li{
+    width: 31.3333%;
+    margin: 0 1%;
+    float: left;
+}
+@media(max-width: 569px){
+	.skill ul li{
+        width: 98%;
+        margin: 10px 0;
+    }
+    .skill ul li img{
+    width: 30%;
+    }
+}
+
+/*contact*/
+.contact{
+    text-align: center;
+    color: #fff;
+}
+
+/* animated*/
+.animated {
+    opacity: 0;
+    transition: all 1.5s;
+    transform: translateY(50px);
+}
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*swiper*/
+.works{
+    background-image: url(https://i.imgur.com/XKVrRa3.png);
+    padding-bottom: 40px;
+}
+.swiper{
+    position: relative;
+    width: 80%;
+    height: 400px;
+    background: #000;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 5% auto;
+    padding: 0;
+}
+.swiper-container {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.swiper-slide {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.gallery-top {
+    height: 80%;
+    width: 100%;
+}
+.gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+    height: 100%;
+    opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+.swiper-slide a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.more{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.more span{
+    font-size: 30px;
+    color: #252020;
+    background: #fff;
+    padding: 10px;
+    opacity: 0.8;
+}
+.swiper-slide a:hover .more{
+    opacity: 1;
+}
+.swiper-slide a:hover .swiper-slide{
+    opacity: 0.6;
+}
